@@ -11,7 +11,7 @@ def this_sunday(today)
 end
 
 def week_for(today)
-  "from_date=#{this_monday(today).strftime("%Y-%m-%d")}&to_date=#{this_sunday(today).strftime("%Y-%m-%d")}"
+  "#{this_monday(today).strftime("%Y-%m-%d")}&to_date=#{this_sunday(today).strftime("%Y-%m-%d")}"
 end
 
 if __FILE__==$0

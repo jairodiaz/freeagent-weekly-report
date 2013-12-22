@@ -17,7 +17,7 @@ projects.each do |project|
   puts project.name
 end
 
-timeslips = FreeAgent::Timeslip.all
+timeslips = FreeAgent::Timeslip.filter(:from_date => week_for(DateTime.now))
 
 timeslips.each do |timeslip|
   puts timeslip.user
