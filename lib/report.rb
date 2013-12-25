@@ -13,7 +13,7 @@ puts 'Retrieving weekly timesheet entries...'
 FreeAgent.environment = :production #:sandbox #:production
 FreeAgent.access_details(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'], ENV['ACCESS_TOKEN'])
 
-report_date = week_for(DateTime.now-7)
+report_date = week_for(DateTime.now - (ENV['WEEKS_AGO'].to_i * 7))
 timeslips = FreeAgent::Timeslip.filter(:from_date => report_date)
 
 summary = ProjectSummary.new
