@@ -11,6 +11,9 @@ class ProjectSummary
   def print_raw
     @result.each_pair { |k,v| puts "project: #{k}, total hours: #{sprintf '%.1f', v}" }
   end
+  def total
+    @result.inject(0) { |sum, pair| sum + pair[1]; }
+  end
 end
 
 if __FILE__==$0
@@ -27,4 +30,5 @@ if __FILE__==$0
   p.count Timeslip.new('project2', 5)
   p.count Timeslip.new('project1', 2)
   p.print_raw
+  puts "Total hours: #{p.total}"
 end
