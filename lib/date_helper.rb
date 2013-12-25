@@ -15,9 +15,10 @@ def week_for(today)
 end
 
 if __FILE__==$0
+  # Simple unit test
   d = DateTime.now
-  puts "today is #{d}"
-  puts "this monday is #{this_monday(d)}"
-  puts "this sunday is #{this_sunday(d)}"
+  puts "Today is #{d}"
+  puts "This Monday is #{this_monday(d)}"
+  puts "This Sunday is #{this_sunday(d)}"
   puts week_for(d)
 end
